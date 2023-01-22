@@ -1,5 +1,5 @@
-import cv2
 import numpy as np
+import cv2
 
 # load the input images
 img1 = cv2.imread('image1.jpg')

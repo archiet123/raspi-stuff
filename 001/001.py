@@ -1,57 +1,14 @@
 #this script will be hard coding correct values to test if the loop made will return the correct characters if ture.
 
 #this would normally be the code for pixel coordinates in the image.
-column0 = img[240:658,467:482]#column0 bounds
+
+#column0 = img[240:658,467:482]#column0 bounds
 #zero = cv2.imshow('Grayscale',column0)
-zero = plt.imsave("newimage0.jpg", column0, cmap ='gray')
+#zero = plt.imsave("newimage0.jpg", column0, cmap ='gray')
 
-column1 = img[240:658,480:495]#column1 bounds
-#one = cv2.imshow('Grayscale',column1)
-one = plt.imsave("newimage1.jpg", column1, cmap ='gray')
- 
-column2 = img[240:658,494:509]#column2 bounds
-#two = cv2.imshow('Grayscale',column2)
-two = plt.imsave("newimage2.jpg", column2, cmap ='gray')
+column0 = True
 
 
-'''column3 = img[345:650,297:307]#column3 bounds
-three = cv2.imshow('Grayscale',column3)
-#three = plt.imsave("newimage3.jpg", column3, cmap ='gray')
-
-
-column4 = img[345:650,305:315]#column4 bounds 
-four = cv2.imshow('Grayscale',column4)
-#four = plt.imsave("newimage4.jpg", column4, cmap ='gray')
-
-
-column5 = img[345:650,313:323]#column 5 bounds tbc
-five = cv2.imshow('Grayscale',column5)
-#five = plt.imsave("newimage5.jpg", column5, cmap ='gray')
-
-
-column6 = img[345:650,321:331]#column 6 bounds tbc
-six = cv2.imshow('Grayscale',column6)
-#six = plt.imsave("newimage6.jpg", column6, cmap ='gray')
-
-
-column7 = img[345:650,329:339]#column 7 tbc (very poor card)
-seven = cv2.imshow('Grayscale',column7)
-#seven = plt.imsave("newimage7.jpg", column7, cmap ='gray')
-
-
-column8 = img[345:650,337:347]#column 8 bounds
-eight = cv2.imshow('Grayscale',column8)
-#eight = plt.imsave("newimage8.jpg", column8, cmap ='gray')
-
-
-column9 = img[350:670,345:355]#column 9 bounds
-nine = cv2.imshow('Grayscale',column9)
-#nine = plt.imsave("newimage9.jpg", column9, cmap ='gray')
-
-'''
-
-cv2.waitKey()
-cv2.destroyAllWindows()
 
 #column10 = img[350:650,348:357]
 #a = cv2.imshow('Grayscale',column10)
@@ -74,10 +31,10 @@ final_string = ""
 #for loop loops 6 times in testing, will have to be 26 times in practice (PER CHARACTER). 26*86 loops maximum
 #(26 per character in alphabet,   86 or x amount for however many holes have been punched )
 
-for columnsIdx in range (0,3):#(0,85):
-    for charIndex in range (0,3):#(0,35):
-        ogColumnName = (f'newimage{columnsIdx}') # save images as newimage{column index}
-        ogImage = cv2.imread(f'{ogColumnName}.jpg', 0)
+for columnsIdx in range (0,3):#(0,85): numbers of columns on a punchcard
+    for charIndex in range (0,3):#(0,35): numbers of characters that are defined
+        ogColumnName = (f'newimage{columnsIdx}') # taking new image and save image as newimage{column index}
+        ogImage = cv2.imread(f'{ogColumnName}.jpg', 0) #cv2 reads image and saves as loop index
 
         charImage = cv2.imread(f'column{charIndex}.jpg', 0)
         res = cv2.absdiff(charImage, ogImage)

@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 # load the input images
-img1 = cv2.imread('panda.jpg')
-img2 = cv2.imread('panda1.jpg')
+img1 = cv2.imread('image1.jpg')
+img2 = cv2.imread('image2.jpg')
 
 # convert the images to grayscale
 img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)

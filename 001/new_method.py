@@ -3,7 +3,7 @@ import cv2
 
 # load the input images
 img1 = cv2.imread('image1.jpg')
-img2 = cv2.imread('image1_edit.jpg')
+img2 = cv2.imread('image1.jpg')
 
 # convert the images to grayscale
 img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)

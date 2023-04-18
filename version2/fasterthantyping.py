@@ -8,10 +8,10 @@ def getCharacter(final):
 	elif final > 95 and final < 120:
 		selector = 2		
 		return selector
-	elif final > 125 and final < 150:
+	elif final > 125 and final < 151:
 		selector = 3		
 		return selector
-	elif final > 155 and final < 180:
+	elif final > 151 and final < 180:
 		selector = 4
 		return selector
 	elif final > 190 and final < 210:
@@ -31,6 +31,6 @@ def getCharacter(final):
 		return selector
 	
 
-final = 140
+final = 151
 selector = getCharacter(final)
 print(selector)

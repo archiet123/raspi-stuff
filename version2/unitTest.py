@@ -38,7 +38,7 @@ def getCharacter(final):
 	elif final > 95 and final < 120:
 		selector = 2		
 		return selector
-	elif final > 125 and final < 150:
+	elif final > 122 and final < 150:
 		selector = 3		
 		return selector
 	elif final > 155 and final < 180:

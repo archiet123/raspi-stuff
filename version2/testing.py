@@ -45,7 +45,7 @@ for index in range(0,69):
 		break
 	else:	
 		final = int(final)
-		selector = getCharacter(139)
+		selector = getCharacter(final)
 		final_string+=characters[selector]
 
 print("\n")

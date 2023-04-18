@@ -13,10 +13,10 @@ img = cv2.imread(f'assets/all80.jpg')#reading init pic
 
 
 def autoCoords():
-	leftY = 466
-	rightY = 476
+	leftY = 463
+	rightY = 477
 	
-	for index in range(0,79):
+	for index in range(0,69):
 		#print(f"leftY: {leftY} rightY: {rightY}")
 		column0 = img[260:650, leftY:rightY]
 		plt.imsave(f"assets/testing{index}.jpg", column0)		
@@ -43,19 +43,19 @@ def getCharacter(final):
 	elif final > 151 and final < 180:
 		selector = 4
 		return selector
-	elif final > 190 and final < 210:
+	elif final > 190 and final < 215:
 		selector = 5
 		return selector
 	elif final > 230 and final < 250:
 		selector = 6
 		return selector
-	elif final > 265 and final < 280:
+	elif final > 265 and final < 285:
 		selector = 7
 		return selector
 	elif final > 295 and final < 320:
 		selector = 8
 		return selector
-	elif final > 330 and final < 350:
+	elif final > 330 and final < 355:
 		selector = 9
 		return selector
 

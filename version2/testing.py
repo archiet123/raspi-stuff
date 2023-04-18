@@ -9,25 +9,14 @@ import cv2
 import os
 
 from variables import * #importing variables from other file
-os.system('python variables.py')
-
-
-#camera = PiCamera()
-#camera.rotation = -180
+os.system('python unitTest.py')
 
 characters = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 final_string = ""
 
-
-
-img = cv2.imread(f'assets/card.jpg')#reading init pic
-cropped = img[260:650,460:1460]#setting bounds of whole punchcard
-
-
 toRemove = ["/", ")", "("]
 
-
-for index in range(0,10):
+for index in range(0,79):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index}    	
 	read = cv2.imread(f'{imageName}.jpg')#this will need to loop through all images that need to be read
 

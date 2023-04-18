@@ -41,6 +41,8 @@ def getCharacter(final):
 
 img = cv2.imread(f'assets/card.jpg')#reading init pic
 
+
+
 column0 = img[260:650, 470:480]#column0 bounds  
 plt.imsave("assets/testing0.jpg", column0)
 
@@ -74,13 +76,3 @@ plt.imsave("assets/testing9.jpg", column9)
 column10 = img[260:650, 596:606]
 plt.imsave("assets/testing10.jpg", column10)
 
-'''
-listSelector0 = img[195:230, 470:480]
-plt.imsave("assets/first.jpg", listSelector0)
-
-listSelector1 = img[195:230, 470:480]
-plt.imsave("assets/second.jpg", listSelector1)
-
-listSelector2 = img[195:230, 470:480]
-plt.imsave("assets/third.jpg", listSelector2)
-'''

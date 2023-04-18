@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import cv2
 import os
 
-from variables import * #importing variables from other file
+from unitTest import * #importing variables from other file
 os.system('python unitTest.py')
 
 characters = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -47,6 +47,7 @@ for index in range(0,69):
 		final = int(final)
 		selector = getCharacter(final)
 		final_string+=characters[selector]
+		
 
 print("\n")
 print(f"the punchcard had {index} columns punched")

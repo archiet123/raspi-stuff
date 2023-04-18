@@ -7,7 +7,7 @@ import PIL
 import matplotlib.pyplot as plt
 import cv2
 
-def getCharacter(final):
+def etCharacter(final):
 	if final > 20 and final < 50:
 		selector = 0
 		return selector

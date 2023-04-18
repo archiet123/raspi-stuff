@@ -31,6 +31,6 @@ def getCharacter(final):
 		return selector
 	
 
-final = 151
+final = 140
 selector = getCharacter(final)
 print(selector)

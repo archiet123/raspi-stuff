@@ -16,7 +16,7 @@ final_string = ""
 
 toRemove = ["/", ")", "("]
 
-for index in range(0,79):
+for index in range(0,69):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index}    	
 	read = cv2.imread(f'{imageName}.jpg')#this will need to loop through all images that need to be read
 
@@ -45,7 +45,7 @@ for index in range(0,79):
 		break
 	else:	
 		final = int(final)
-		selector = getCharacter(final)
+		selector = getCharacter(139)
 		final_string+=characters[selector]
 
 print("\n")

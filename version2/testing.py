@@ -53,5 +53,15 @@ print("\n")
 print(f"the punchcard had {index + 1} columns punched")
 print(f'The final string is: {final_string}')
 
+# parts = final_string.split("123456789")
+# if len(parts) == 4:
+# 	print("Worked?")
+# else: 
+# 	for idx, part in enumerate(parts):
+# 		print(part)
+# 		if part != "123456789":
+# 			print(idx, "broke")
+# 		else: 
+# 			print(idx, "correct")
 	#cv2.waitKey(0)#is used to keep 
 

@@ -16,7 +16,7 @@ final_string = ""
 
 toRemove = ["/", ")", "("]
 
-for index in range(0,69):
+for index in range(0,80):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index}    	
 	read = cv2.imread(f'{imageName}.jpg')#this will need to loop through all images that need to be read
 
@@ -50,7 +50,7 @@ for index in range(0,69):
 		
 
 print("\n")
-print(f"the punchcard had {index} columns punched")
+print(f"the punchcard had {index + 1} columns punched")
 print(f'The final string is: {final_string}')
 
 	#cv2.waitKey(0)#is used to keep 

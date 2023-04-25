@@ -24,7 +24,6 @@ img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
 #cv2.waitKey()
 
 
-
 def autoCoords():
 	leftY = 468
 	rightY = 480

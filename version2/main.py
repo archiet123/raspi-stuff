@@ -22,7 +22,7 @@ for index in range(80):
 	blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
 	thresh = cv2.threshold(blurred, 200, 250, cv2.THRESH_BINARY)[1]	
 	erode = cv2.erode(thresh, None, iterations=2) # perform a series of erosions and dilations to remove any small blobs of noise from the thresholded image
-	cv2.imwrite('eroded.jpg', erode)#saves the eroded image to the directory
+	#cv2.imwrite('eroded.jpg', erode)#saves the eroded image to the directory
 	#cv2.imshow('window', erode)
 	
 	minMaxLoc = cv2.minMaxLoc(erode)#minMaxloc finds the darkest and brightest part of the image (varibale) 'erode' 	

@@ -9,6 +9,6 @@ run "python brightestPoint.py" into terminal
 ### changing target image
 
 inside brightestPoint.py line 23 = img = cv2.imread(f'assets/card.jpg')#reading init pic
-assetsm/card is the target image, change "card" to one of the following:
+assets/card is the target image, change "card" to one of the following:
   * card
   * first_image

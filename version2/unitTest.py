@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import cv2
 import math
 
-img = cv2.imread(f'assets/all80.jpg')#reading init pic
+img = cv2.imread(f'ImagesToRead/all80.jpg')#reading init pic
 #cv2.imshow('window', img)
 #cv2.waitKey()
 
@@ -29,17 +29,47 @@ def autoCoords():
 		leftY +=13
 		rightY +=13
 
-		if index == 0:
+		if index == 0 or index == 72:
 			continue
-		if index % 9 == 0:
+		if index % 8 == 0:
 			print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 
-		# if index % 30 == 0:
-		# 	print(index, "removing 8")
-		# 	leftY +=-8
-		# 	rightY +=-8
+		if index % 18 == 0:
+			print(index, "removing 6")
+			leftY +=-6
+			rightY +=-6
+
+		if index % 28 == 0:
+			print(index, "removing 4")
+			leftY +=-4
+			rightY +=-4
+		
+		if index % 46 == 0:
+			print(index, "removing 4")
+			leftY +=-4
+			rightY +=-4
+
+		if index % 54 == 0:
+			print(index, "added 4")
+			leftY +=4
+			rightY +=4
+
+		if index % 67 == 0:
+			print(index, "removing 4")
+			leftY +=-4
+			rightY +=-4
+		
+		if index % 74 == 0:
+			print(index, "removing 6")
+			leftY +=-6
+			rightY +=-6
+		
+		if index % 76 == 0:
+			print(index, "removing 6")
+			leftY +=-6
+			rightY +=-6
 
 autoCoords()
 

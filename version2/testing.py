@@ -16,7 +16,7 @@ final_string = ""
 
 toRemove = ["/", ")", "("]
 
-for index in range(0,80):
+for index in range(80):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index}    	
 	read = cv2.imread(f'{imageName}.jpg')#this will need to loop through all images that need to be read
 
@@ -38,8 +38,8 @@ for index in range(0,80):
 	final = yRegion.replace(')', '')#replacing the bracket that is returned with tripple digit coords
 	
 	#print(f'the size of the image is: {shape}')	
-	#print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
-	#print(f'{imageName} {final}')
+	print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
+	print(f'{imageName} {final}')
 
 	if final == '':
 		break
@@ -50,8 +50,18 @@ for index in range(0,80):
 		
 
 print("\n")
-print(f"the punchcard had {index + 1} columns punched")
-print(f'The final string is: {final_string}')
+print(f"the punchcard had {index} columns punched")
+#print(f'The final string is: {final_string}')
+
+splited_str = []
+n  = 9
+# looping through  example_str from 0 to length
+# of example_str in a step size of 5
+for index in range(0, len(final_string), n):
+    # slicing at iteration stops and storing it in splited_str
+    splited_str.append(final_string[index : index + n]) 
+print(splited_str)
+
 
 # parts = final_string.split("123456789")
 # if len(parts) == 4:

@@ -8,5 +8,5 @@ run "python main.py" into terminal
 
 ### changing target image
 
-feature in progress
+feature in progress,
 the default image is a fully punched card

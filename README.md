@@ -4,9 +4,8 @@ punchcard reader raspi
 ## how to run
 download repo and move to directory in cmd/ vscode
 
-run "python main.py" into terminal
+## changing target image
 
-### changing target image
+there are a select amount of image to choose from, all80 gives the best result
 
-feature in progress,
-the default image is a fully punched card
+once in the correct directory run, "py main.py --imageName (the image you want to test)

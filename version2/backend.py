@@ -1,14 +1,10 @@
-import re
 import numpy as np
 import cv2
-#from picamera import PiCamera
-from PIL import Image, ImageChops
-import PIL
 import matplotlib.pyplot as plt
 import cv2
-import math
+import os
 
-img = cv2.imread(f'ImagesToRead/all80.jpg')#reading init pic
+img = cv2.imread(f'ImagesToRead/abc123.jpg')#reading init pic
 #cv2.imshow('window', img)
 #cv2.waitKey()
 

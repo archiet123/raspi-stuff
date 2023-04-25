@@ -1,15 +1,11 @@
-import re
 import numpy as np
 import cv2
-#from picamera import PiCamera
-from PIL import Image, ImageChops
-import PIL
 import matplotlib.pyplot as plt
 import cv2
 import os
 
-from unitTest import * #importing variables from other file
-os.system('python unitTest.py')
+from backend import * #importing variables from other file
+os.system('python backend.py')
 
 characters = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 final_string = ""
@@ -20,10 +16,7 @@ for index in range(80):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index}    	
 	read = cv2.imread(f'{imageName}.jpg')#this will need to loop through all images that need to be read
 
-	# cv2.imshow("window", read)
-	# cv2.waitKey(0)
-
-	#shape =read.shape	
+	
 	gray = cv2.cvtColor(read, cv2.COLOR_BGR2GRAY) #the first parameter is the image that is read by cv2
 	
 	blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
@@ -61,17 +54,3 @@ for index in range(0, len(final_string), n):
     # slicing at iteration stops and storing it in splited_str
     splited_str.append(final_string[index : index + n]) 
 print(splited_str)
-
-
-# parts = final_string.split("123456789")
-# if len(parts) == 4:
-# 	print("Worked?")
-# else: 
-# 	for idx, part in enumerate(parts):
-# 		print(part)
-# 		if part != "123456789":
-# 			print(idx, "broke")
-# 		else: 
-# 			print(idx, "correct")
-	#cv2.waitKey(0)#is used to keep 
-

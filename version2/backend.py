@@ -28,7 +28,7 @@ def autoCoords():
 	leftY = 468
 	rightY = 480
 	
-	for index in range(0,80):
+	for index in range(0,81):
 		
 		column0 = img[260:650, leftY:rightY]
 		plt.imsave(f"assets/testing{index}.jpg", column0)		

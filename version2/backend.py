@@ -3,10 +3,15 @@ import cv2
 import matplotlib.pyplot as plt
 import cv2
 import os
+import argparse
 
-img = cv2.imread(f'ImagesToRead/abc123.jpg')#reading init pic
+from main import * #importing variables from other file
+from main import getImage
+
+img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
 #cv2.imshow('window', img)
 #cv2.waitKey()
+
 
 
 def autoCoords():

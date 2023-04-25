@@ -3,9 +3,24 @@ import cv2
 import matplotlib.pyplot as plt
 import cv2
 import os
+import argparse
 
 from backend import * #importing variables from other file
 os.system('python backend.py')
+
+print(f"\nimage to select from:")
+print("abc123, abcCard, all80, card, first_image, realTest, spacedPunches\n")
+#creating a parser
+parser = argparse.ArgumentParser()
+#adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.
+parser.add_argument('--imageName', type=str, required=True)
+
+#assigning argument to variable
+value = parser.parse_args()
+
+#assigning imageName to varible, can be accessed faster
+getImage = value.imageName
+
 
 characters = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 final_string = ""

@@ -58,33 +58,30 @@ for index in range(81):
 	minMaxLoc2 = cv2.minMaxLoc(erode2)
 
 	yRegion = str(minMaxLoc)[25:29]#just gets the Y axis 	
-	yRegion2 = str(minMaxLoc2)[25:29]
+	yRegion2 = str(minMaxLoc2)[25:30]
 
 	final = yRegion.replace(')', '')#replacing the bracket that is returned with tripple digit coords
-	final2 = yRegion2.replace(')', '')
-
+	final2 = yRegion2.replace(')', '')	
 	
 	#print(f'the size of the image is: {shape}')	
-	print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
-	print(f'{imageName} {final}')
+	#print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
+	#print(f'{imageName} {final}')
 
+	#print(final2)
 
-
-	if final == '' :
-		final = '0'
-	elif final2 == '':
+	if final2 == '':
 		final2 = '0'
-	final = int(final)		
+	
+	if final == '':
+		final = '0'
+	
+	final = int(final)
 	final2 = int(final2)
-	
-	
-
-
-
 	selector = getCharacter(final)		
 	listSelector = getList(final2)
-	#print(listSelector)
+	
 	final_string+=listSelector[selector -1]
+	
 
 
 		

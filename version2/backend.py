@@ -30,7 +30,7 @@ def autoCoords():
 	
 	for index in range(0,81):
 		
-		column0 = img[260:650, leftY:rightY]
+		column0 = img[250:650, leftY:rightY]
 		plt.imsave(f"assets/testing{index}.jpg", column0)		
 
 		# if index >= 40: 

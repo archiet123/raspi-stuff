@@ -35,8 +35,8 @@ for index in range(81):
 	final = yRegion.replace(')', '')#replacing the bracket that is returned with tripple digit coords
 	
 	#print(f'the size of the image is: {shape}')	
-	#print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
-	#print(f'{imageName} {final}')
+	print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
+	print(f'{imageName} {final}')
 
 	if final == '':
 		break
@@ -51,7 +51,7 @@ print(f"the punchcard had {index} columns punched")
 #print(f'The final string is: {final_string}')
 
 splited_str = []
-n  = 9
+n  = 10
 # looping through  example_str from 0 to length
 # of example_str in a step size of 5
 for index in range(0, len(final_string), n):

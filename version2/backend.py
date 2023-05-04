@@ -30,7 +30,7 @@ def autoCoords():
 	
 	for index in range(0,81):
 		
-		column0 = img[250:650, leftY:rightY]
+		column0 = img[280:650, leftY:rightY]
 		plt.imsave(f"assets/testing{index}.jpg", column0)		
 
 		# if index >= 40: 
@@ -42,10 +42,16 @@ def autoCoords():
 
 		if index == 0 or index == 72:
 			continue
+
+		if index == 7:
+			#print(index, "removing 4")
+			leftY +=-4
+			rightY +=-4	
+
 		if index % 8 == 0:
 			#print(index, "removing 4")
 			leftY +=-4
-			rightY +=-4
+			rightY +=-4		
 
 		if index % 18 == 0:
 			#print(index, "removing 6")
@@ -86,23 +92,23 @@ autoCoords()
 
 def getCharacter(final):	
 	selector = 0
-	if final > 320:
+	if final > 310:
 		selector = 9
-	elif final > 285:
+	elif final > 270:
 		selector = 8
-	elif final > 265:
+	elif final > 240:
 		selector = 7
-	elif final > 230:
+	elif final > 200:
 		selector = 6
-	elif final > 190:
+	elif final > 160:
 		selector = 5
-	elif final > 165:
+	elif final > 130:
 		selector = 4
-	elif final > 125:
+	elif final > 100:
 		selector = 3
-	elif final > 95:
+	elif final > 60:
 		selector = 2
-	elif final > 55:
+	elif final > 35:
 		selector = 1
 	elif final > 20:
 		selector = 0

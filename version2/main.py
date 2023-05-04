@@ -80,7 +80,7 @@ for index in range(81):
 	selector = getCharacter(final)		
 	listSelector = getList(final2)
 	
-	final_string+=listSelector[selector -1]
+	final_string+=listSelector[selector]
 	
 
 

@@ -43,42 +43,42 @@ def autoCoords():
 		if index == 0 or index == 72:
 			continue
 		if index % 8 == 0:
-			print(index, "removing 4")
+			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 
 		if index % 18 == 0:
-			print(index, "removing 6")
+			#print(index, "removing 6")
 			leftY +=-6
 			rightY +=-6
 
 		if index % 28 == 0:
-			print(index, "removing 4")
+			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 		
 		if index % 46 == 0:
-			print(index, "removing 4")
+			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 
 		if index % 54 == 0:
-			print(index, "added 4")
+			#print(index, "added 4")
 			leftY +=4
 			rightY +=4
 
 		if index % 67 == 0:
-			print(index, "removing 4")
+			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 		
 		if index % 74 == 0:
-			print(index, "removing 6")
+			#print(index, "removing 6")
 			leftY +=-6
 			rightY +=-6
 		
 		if index % 76 == 0:
-			print(index, "removing 6")
+			#print(index, "removing 6")
 			leftY +=-6
 			rightY +=-6
 

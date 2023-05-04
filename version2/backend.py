@@ -51,42 +51,37 @@ def autoCoords():
 		if index % 8 == 0:
 			#print(index, "removing 4")
 			leftY +=-4
-			rightY +=-4		
+			rightY +=-4				
 
-		if index % 18 == 0:
-			#print(index, "removing 6")
-			leftY +=-6
-			rightY +=-6
-
-		if index % 28 == 0:
+		if index % 22 == 0:
 			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 		
-		if index % 46 == 0:
+		if index % 30 == 0:
 			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
 
-		if index % 54 == 0:
+		if index % 38 == 0:
 			#print(index, "added 4")
-			leftY +=4
-			rightY +=4
-
-		if index % 67 == 0:
-			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4
-		
-		if index % 74 == 0:
-			#print(index, "removing 6")
-			leftY +=-6
-			rightY +=-6
-		
-		if index % 76 == 0:
-			#print(index, "removing 6")
-			leftY +=-6
-			rightY +=-6
+
+		if index % 51 == 0:
+			#print(index, "added 4")
+			leftY +=-4
+			rightY +=-4
+
+		if index % 78 == 0:
+			#print(index, "added 4")
+			leftY +=-4
+			rightY +=-4
+
+		if index % 79 == 0:
+			#print(index, "added 4")
+			leftY +=-4
+			rightY +=-4
 
 autoCoords()
 

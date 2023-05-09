@@ -7,24 +7,26 @@ import argparse
 
 
 
-
-from backend import *
-
-#getCharacter(67)
-
-#print(f"\nimage to select from:")
-#print("abc123, abcCard, all80, card, first_image, realTest, spacedPunches\n")
-##creating a parser
-#parser = argparse.ArgumentParser()
-##adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.
-#parser.add_argument('--imageName', type=str, required=True)
-#
-##assigning argument to variable
-#value = parser.parse_args()
-#
-#print(f"image selected: {value.imageName}")
-#
-#read = cv2.imread(f'ImagesToRead/{value.imageName}.jpg')
-#cv2.imshow('window', read)
-#cv2.waitKey()
-
+def getCharacter(final):	
+	selector = 0
+	if final < 320:
+		selector = 9
+	elif final < 285:
+		selector = 8
+	elif final < 265:
+		selector = 7
+	elif final < 230:
+		selector = 6
+	elif final < 190:
+		selector = 5
+	elif final < 165:
+		selector = 4
+	elif final < 125:
+		selector = 3
+	elif final < 95:
+		selector = 2
+	elif final < 55:
+		selector = 1
+	elif final < 20:
+		selector = 0
+	return selector

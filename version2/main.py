@@ -36,7 +36,7 @@ toRemove = ["/", ")", "("]
 for index in range(81):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index} 
 	top_row_image = (f'top_row_images/testing{index}')
-
+ 
 	read = cv2.imread(f'{imageName}.jpg')#this will need to loop through all images that need to be read
 	read2 = cv2.imread(f'{top_row_image}.jpg')
 
@@ -80,7 +80,7 @@ for index in range(81):
 	selector = getCharacter(final)		
 	listSelector = getList(final2)
 	
-	final_string+=listSelector[selector]
+	final_string+=listSelector[selector -1]
 	
 
 

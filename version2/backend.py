@@ -91,9 +91,9 @@ def topRow():
 	leftY = 468
 	rightY = 480
 	
-	for index in range(0,81):
+	for index in range(0,80):
 		
-		column0 = img[210:280, leftY:rightY]
+		column0 = img[200:280, leftY:rightY]
 		plt.imsave(f"top_row_images/testing{index}.jpg", column0)		
 
 		# if index >= 40: 

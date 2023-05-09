@@ -70,14 +70,15 @@ for index in range(81):
 	#print(final2)
 
 	if final2 == '':
-		final2 = '0'
+		final2 = '1'
 	
 	if final == '':
 		final = '0'
 	
 	final = int(final)
 	final2 = int(final2)
-	selector = getCharacter(final)		
+	selector = getCharacter(final)
+		
 	listSelector = getList(final2)
 	
 	final_string+=listSelector[selector -1]

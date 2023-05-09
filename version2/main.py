@@ -101,7 +101,7 @@ print(f"the punchcard had {index +1} columns punched")
 #print(f'The final string is: {final_string}')
 
 splited_str = []
-n  = 10
+n  = 9
 # looping through  example_str from 0 to length
 # of example_str in a step size of 5
 for index in range(0, len(final_string), n):

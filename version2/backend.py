@@ -44,48 +44,49 @@ def autoCoords():
 		leftY +=13
 		rightY +=13
 
-		if index == 0 or index == 72:
+		if index == 0 :
 			continue
 
-		if index == 7:
+		if index % 5:
+			#print(index, "removing 4")
+			leftY +=-1
+			rightY +=-1
+
+		if index == 38:
 			#print(index, "removing 4")
 			leftY +=-4
 			rightY +=-4	
 
-		# if index % 8 == 0:
+
+		# if index == 7:
 		# 	#print(index, "removing 4")
 		# 	leftY +=-4
-		# 	rightY +=-4				
-
-		if index % 22 == 0:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4
+		# 	rightY +=-4	
 		
-		if index % 30 == 0:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4
+		# if index == 13:
+		# 	#print(index, "removing 4")
+		# 	leftY +=-4
+		# 	rightY +=-4	
 
-		if index % 38 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
+		# if index == 17:
+		# 	#print(index, "removing 4")
+		# 	leftY +=-4
+		# 	rightY +=-4	
+		
+		# if index == 22:
+		# 	#print(index, "removing 4")
+		# 	leftY +=-4
+		# 	rightY +=-4	
+		
+		# if index == 27:
+		# 	#print(index, "removing 4")
+		# 	leftY +=-6
+		# 	rightY +=-6
 
-		if index % 51 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
-
-		if index % 78 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
-
-		if index % 79 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
+		# if index == 30:
+		# 	#print(index, "removing 4")
+		# 	leftY +=-4
+		# 	rightY +=-4
 
 def topRow():
 	leftY = 468

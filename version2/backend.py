@@ -52,10 +52,10 @@ def autoCoords():
 			leftY +=-4
 			rightY +=-4	
 
-		if index % 8 == 0:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4				
+		# if index % 8 == 0:
+		# 	#print(index, "removing 4")
+		# 	leftY +=-4
+		# 	rightY +=-4				
 
 		if index % 22 == 0:
 			#print(index, "removing 4")
@@ -93,7 +93,7 @@ def topRow():
 	
 	for index in range(0,80):
 		
-		column0 = img[200:280, leftY:rightY]
+		column0 = img[210:290, leftY:rightY]
 		plt.imsave(f"top_row_images/testing{index}.jpg", column0)		
 
 		# if index >= 40: 

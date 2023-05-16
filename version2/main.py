@@ -42,7 +42,7 @@ toRemove = ["/", ")", "("]
 
 
 #going to have to do everything twice in this loop, once for 0-9 and once for top rows
-for index in range(81):
+for index in range(13):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index} 
 	top_row_image = (f'top_row_images/testing{index}')
  
@@ -61,7 +61,7 @@ for index in range(81):
 	erode = cv2.erode(thresh, None, iterations=2) # perform a series of erosions and dilations to remove any small blobs of noise from the thresholded image
 	erode2 = cv2.erode(thresh2, None, iterations=2)
 
-	#cv2.imwrite('assets/eroded.jpg', erode)#saves the eroded image to the directory
+	cv2.imwrite('assets/eroded.jpg', erode)#saves the eroded image to the directory
 	#cv2.imshow('window', erode)	
 	minMaxLoc = cv2.minMaxLoc(erode)#minMaxloc finds the darkest and brightest part of the image (varibale) 'erode'
 	minMaxLoc2 = cv2.minMaxLoc(erode2)
@@ -73,8 +73,8 @@ for index in range(81):
 	final2 = yRegion2.replace(')', '')	
 	
 	#print(f'the size of the image is: {shape}')	
-	print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
-	print(f'{imageName} {final}')
+	#print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
+	#print(f'{imageName} {final}')
 
 	#print(final2)
 
@@ -98,11 +98,11 @@ for index in range(81):
 		
 
 print("\n")
-print(f"the punchcard had {index +1} columns punched")
+print(f"the punchcard had {index} columns punched")
 #print(f'The final string is: {final_string}')
 
 splited_str = []
-n  = 10
+n  = 9
 # looping through  example_str from 0 to length
 # of example_str in a step size of 5
 for index in range(0, len(final_string), n):

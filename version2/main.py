@@ -5,11 +5,11 @@ import cv2
 import os
 import argparse
 
-from picamera import PiCamera
-camera = PiCamera()
-camera.rotation = -180
+# from picamera import PiCamera
+# camera = PiCamera()
+# camera.rotation = -180
 
-camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/All80.jpg')#taking init pic
+# camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/All80.jpg')#taking init pic
 #img = cv2.imread(f'ImagesToRead/freshImage.jpg')#reading init pic
 
 from backend import * #importing variables from other file
@@ -102,7 +102,7 @@ print(f"the punchcard had {index +1} columns punched")
 #print(f'The final string is: {final_string}')
 
 splited_str = []
-n  = 9
+n  = 10
 # looping through  example_str from 0 to length
 # of example_str in a step size of 5
 for index in range(0, len(final_string), n):

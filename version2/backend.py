@@ -175,7 +175,7 @@ def getCharacter(final):
 	selector = 0
 	if final > 310:
 		selector = 9
-	elif final > 270:
+	elif final > 275:
 		selector = 8
 	elif final > 240:
 		selector = 7

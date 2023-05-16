@@ -5,12 +5,12 @@ import cv2
 import os
 import argparse
 
-from picamera import PiCamera
-camera = PiCamera()
-camera.rotation = -180
+# from picamera import PiCamera
+# camera = PiCamera()
+# camera.rotation = -180
 
-camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/currentCard.jpg')#taking init pic
-#img = cv2.imread(f'ImagesToRead/freshImage.jpg')#reading init pic
+# camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/currentCard.jpg')#taking init pic
+# #img = cv2.imread(f'ImagesToRead/freshImage.jpg')#reading init pic
 
 from backend import * #importing variables from other file
 os.system('python backend.py')
@@ -30,8 +30,8 @@ def getList(final2):
 	else:
 		return List
 
-aList = ['X','A','B','C','D','E','F','G','H','I']
-bList = ['X','J','K','L','M','N','O','P','Q','R']
+aList = ['`','A','B','C','D','E','F','G','H','I']
+bList = ['`','J','K','L','M','N','O','P','Q','R']
 List = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 
@@ -42,7 +42,7 @@ toRemove = ["/", ")", "("]
 
 
 #going to have to do everything twice in this loop, once for 0-9 and once for top rows
-for index in range(80):
+for index in range(81):
 	imageName = (f'assets/testing{index}') # save images as newimage{column index} 
 	top_row_image = (f'top_row_images/testing{index}')
  
@@ -73,8 +73,8 @@ for index in range(80):
 	final2 = yRegion2.replace(')', '')	
 	
 	#print(f'the size of the image is: {shape}')	
-	#print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
-	#print(f'{imageName} {final}')
+	print(f'the brightest part of the image, darkest part of the image, x coord, y coord{minMaxLoc}')	
+	print(f'{imageName} {final}')
 
 	#print(final2)
 
@@ -101,7 +101,7 @@ print(f"the punchcard had {index +1} columns punched")
 #print(f'The final string is: {final_string}')
 
 splited_str = []
-n  = 10
+n  = 9
 # looping through  example_str from 0 to length
 # of example_str in a step size of 5
 for index in range(0, len(final_string), n):

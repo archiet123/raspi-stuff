@@ -57,6 +57,16 @@ def autoCoords():
 			leftY +=-4
 			rightY +=-4	
 
+		if index == 55:
+			#print(index, "removing 4")
+			leftY +=-6
+			rightY +=-6	
+
+		if index == 79:
+			#print(index, "removing 4")
+			leftY +=-3
+			rightY +=-3
+
 
 		# if index == 7:
 		# 	#print(index, "removing 4")
@@ -161,7 +171,7 @@ def getCharacter(final):
 		selector = 7
 	elif final > 200:
 		selector = 6
-	elif final > 160:
+	elif final > 170:
 		selector = 5
 	elif final > 130:
 		selector = 4

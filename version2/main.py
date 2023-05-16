@@ -86,11 +86,12 @@ for index in range(81):
 	
 	final = int(final)
 	final2 = int(final2)
-	selector = getCharacter(final)
+
+	selector = getCharacter(final)#sets the selector based on the position of the y coordinate bright spot
 		
-	listSelector = getList(final2)
+	listSelector = getList(final2)#selects the list that the selector will select from
 	
-	final_string+=listSelector[selector]
+	final_string+=listSelector[selector]#appends character selection to final string
 	
 
 

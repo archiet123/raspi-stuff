@@ -38,17 +38,66 @@ def autoCoords():
 	for index in range(0,81):
 		
 		column0 = img[280:650, leftY:rightY]
-		plt.imsave(f"assets/testing{index}.jpg", column0)		
-
+		plt.imsave(f"assets/testing{index}.jpg", column0)
 		
 		leftY +=13
 		rightY +=13	
 		
+		if index == 8:
+			leftY +=-4
+			rightY +=-4
 
+		if index == 14:
+			leftY +=-4
+			rightY +=-4
+
+		if index == 17:
+			leftY +=-4
+			rightY +=-4
 		
+		if index == 23:
+			leftY +=-6
+			rightY +=-6		
 
+		if index == 29:
+			leftY +=-4
+			rightY +=-4	
 
+		if index == 31:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 39:
+			leftY +=-6
+			rightY +=-6
 		
+		if index == 43:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 49:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 56:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 60:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 67:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 75:
+			leftY +=-6
+			rightY +=-6
+		
+		if index == 79:
+			leftY +=-4
+			rightY +=-4
 
 def topRow():
 	leftY = 468
@@ -57,16 +106,66 @@ def topRow():
 	for index in range(0,80):
 		
 		column0 = img[210:290, leftY:rightY]
-		plt.imsave(f"top_row_images/testing{index}.jpg", column0)		
-
-		# if index >= 40: 
-		# 	leftY +=12
-		# 	rightY +=12
-		# else:
-		leftY +=13
-		rightY +=13		
-
+		plt.imsave(f"top_row_images/testing{index}.jpg", column0)
 		
+		leftY +=13
+		rightY +=13
+
+		if index == 8:
+			leftY +=-4
+			rightY +=-4
+
+		if index == 14:
+			leftY +=-4
+			rightY +=-4
+
+		if index == 17:
+			leftY +=-4
+			rightY +=-4
+		
+		if index == 23:
+			leftY +=-6
+			rightY +=-6		
+
+		if index == 29:
+			leftY +=-4
+			rightY +=-4	
+
+		if index == 31:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 39:
+			leftY +=-6
+			rightY +=-6
+		
+		if index == 43:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 49:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 56:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 60:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 67:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 75:
+			leftY +=-6
+			rightY +=-6
+		
+		if index == 79:
+			leftY +=-4
+			rightY +=-4	
 
 
 autoCoords()

@@ -2,7 +2,7 @@
 punchcard reader raspi
 
 ## how to run
-download repo and move to directory in cmd/ vscode
+download repo and move to directory 'version2' in cmd/ vscode
 
 ## changing target image
 

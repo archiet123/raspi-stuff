@@ -9,7 +9,7 @@ from picamera import PiCamera
 camera = PiCamera()
 camera.rotation = -180
 
-camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/all80.jpg')#taking init pic
+camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/RandomCharacters.jpg')#taking init pic
 # #img = cv2.imread(f'ImagesToRead/freshImage.jpg')#reading init pic
 
 from backend import * #importing variables from other file

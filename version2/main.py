@@ -5,12 +5,12 @@ import cv2
 import os
 import argparse
 
-# from picamera import PiCamera
-# camera = PiCamera()
-# camera.rotation = -180
+from picamera import PiCamera
+camera = PiCamera()
+camera.rotation = -180
 
-# camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/All80s.jpg')#taking init pic
-# #img = cv2.imread(f'ImagesToRead/freshImage.jpg')#reading init pic
+camera.capture(f'/home/pi/raspi-stuff/version2/ImagesToRead/All80.jpg')#taking init pic
+#img = cv2.imread(f'ImagesToRead/freshImage.jpg')#reading init pic
 
 from backend import * #importing variables from other file
 os.system('python backend.py')

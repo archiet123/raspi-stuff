@@ -14,13 +14,13 @@ print("abc123, abcCard, all80, card, first_image, realTest, spacedPunches\n")
 #creating a parser
 parser = argparse.ArgumentParser()
 #adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.
-parser.add_argument('--imageName', type=str, required=True)
+parser.add_argument('--ImageName', type=str, required=True)
 
 #assigning argument to variable
 value = parser.parse_args()
 
 #assigning imageName to varible, can be accessed faster
-getImage = value.imageName
+getImage = value.ImageName
 
 img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
 #cv2.imshow('window', img)
@@ -42,61 +42,13 @@ def autoCoords():
 
 		
 		leftY +=13
-		rightY +=13
-
-		if index == 0 :
-			continue
-
-		if index % 5:
-			#print(index, "removing 4")
-			leftY +=-1
-			rightY +=-1
-
-		if index == 38:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4	
-
-		if index == 55:
-			#print(index, "removing 4")
-			leftY +=-6
-			rightY +=-6	
-
-		if index == 79:
-			#print(index, "removing 4")
-			leftY +=-3
-			rightY +=-3
-
-
-		# if index == 7:
-		# 	#print(index, "removing 4")
-		# 	leftY +=-4
-		# 	rightY +=-4	
+		rightY +=13	
 		
-		# if index == 13:
-		# 	#print(index, "removing 4")
-		# 	leftY +=-4
-		# 	rightY +=-4	
 
-		# if index == 17:
-		# 	#print(index, "removing 4")
-		# 	leftY +=-4
-		# 	rightY +=-4	
 		
-		# if index == 22:
-		# 	#print(index, "removing 4")
-		# 	leftY +=-4
-		# 	rightY +=-4	
-		
-		# if index == 27:
-		# 	#print(index, "removing 4")
-		# 	leftY +=-6
-		# 	rightY +=-6
 
-		# if index == 30:
-		# 	#print(index, "removing 4")
-		# 	leftY +=-4
-		# 	rightY +=-4
+
+		
 
 def topRow():
 	leftY = 468
@@ -112,50 +64,9 @@ def topRow():
 		# 	rightY +=12
 		# else:
 		leftY +=13
-		rightY +=13
+		rightY +=13		
 
-		if index == 0 or index == 72:
-			continue
-
-		if index == 7:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4	
-
-		if index % 8 == 0:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4				
-
-		if index % 22 == 0:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4
 		
-		if index % 30 == 0:
-			#print(index, "removing 4")
-			leftY +=-4
-			rightY +=-4
-
-		if index % 38 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
-
-		if index % 51 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
-
-		if index % 78 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
-
-		if index % 79 == 0:
-			#print(index, "added 4")
-			leftY +=-4
-			rightY +=-4
 
 
 autoCoords()

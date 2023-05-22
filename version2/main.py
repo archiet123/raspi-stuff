@@ -11,7 +11,7 @@ image = cv2.imread("TestingImages/testing.jpg")
 
 # construct the argument parse and parse the arguments
 BINARY_THRESHOLD = 40
-CONNECTIVITY = 10
+CONNECTIVITY = 4
 DRAW_CIRCLE_RADIUS = 4
 
 #  convert to gray
@@ -26,8 +26,11 @@ dilated_image = cv2.dilate(binary_image, np.ones((5, 5)))
 #  threshold the black/ non-black areas
 _, thresh = cv2.threshold(dilated_image, BINARY_THRESHOLD, 255, cv2.THRESH_BINARY)
 
+erode = cv2.erode(thresh, None, iterations=2)
+cv2.imshow("result", erode)
+cv2.waitKey(0)
 #  find connected components
-components = cv2.connectedComponentsWithStats(thresh, CONNECTIVITY, cv2.CV_32S)
+components = cv2.connectedComponentsWithStats(erode, CONNECTIVITY, cv2.CV_32S)
 
 #  draw circles around center of components
 #see connectedComponentsWithStats function for attributes of components variable

@@ -7,42 +7,28 @@ import os
 import argparse
 import PIL
 
-#links
-#https://pyimagesearch.com/2016/10/31/detecting-multiple-bright-spots-in-an-image-with-python-and-opencv/
-#https://stackoverflow.com/questions/51846933/finding-bright-spots-in-a-image-using-opencv
-#https://www.programcreek.com/python/example/88833/skimage.measure.label
+BINARY_THRESHOLD = 20
+CONNECTIVITY = 4
+DRAW_CIRCLE_RADIUS = 4
 
+image = cv2.imread("testing0.jpg")	
 
-# from imutils import contours
-# from skimage import measure
-# Image = ('testing.jpg') # save images as newimage{column index} 
-# read = cv2.imread(Image)#this will need to loop through all images that need to be read
-CoordList = []
-Result = []
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #the first parameter is the image that is read by cv2	
+blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
+thresh = cv2.threshold(blurred, 200, 250, cv2.THRESH_BINARY)[1]	
+erode = cv2.erode(thresh, None, iterations=2) # perform a series of erosions and dilations to remove any small blobs of noise from the thresholded image
 
-image = cv2.imread("eroded.jpg")
-res = np.argwhere((image > 250).any(-1))
+components = cv2.connectedComponentsWithStats(erode, CONNECTIVITY, cv2.CV_32S)
 
-for i in res:
-    CoordList.append(i)#appending all value to list
-    if len(CoordList) == 1:#if length of list is 1 then skip iteration
-        continue
-    else:
-        PenultimateValue = CoordList[-2:][0]        
-        LastValue = CoordList[-1:][0]#getting last value in list
-        CoordDiff = PenultimateValue - LastValue#only should append to list if the difference of last
-        if CoordDiff < 30:
-            continue
-        else:
-            Result.append(CoordDiff)
-        print(LastValue)
-        
+CenterList = []
+centers = components[3]
+for center in centers:
+	rounded = center.round()	
+	CenterList.append(rounded)#appending center coordinates to list
 
-# res = np.argwhere(image[:,:,0] > 250) not sure about this one
-
-print(str(Result))
-
-# print(str(res))
-
-
-
+CenterList.pop(0)#removing first value (first value will always be the center of the image)
+listToStr = ' '.join([str(elem) for elem in CenterList]) 
+DotRemove = listToStr.replace(".", "")
+BracketRemove = DotRemove.replace("]", "")
+print(BracketRemove)
+cv2.imwrite("result.png", thresh)

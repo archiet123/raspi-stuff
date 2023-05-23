@@ -9,10 +9,23 @@ import PIL
 
 image = cv2.imread("TestingImages/testing.jpg")
 
+
+
 # construct the argument parse and parse the arguments
-BINARY_THRESHOLD = 40
+BINARY_THRESHOLD = 20
 CONNECTIVITY = 4
 DRAW_CIRCLE_RADIUS = 4
+
+# gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #the first parameter is the image that is read by cv2	
+
+# blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
+
+
+# thresh = cv2.threshold(blurred, 200, 250, cv2.THRESH_BINARY)[1]	
+
+
+# erode = cv2.erode(thresh, None, iterations=2) # perform a series of erosions and dilations to remove any small blobs of noise from the thresholded image
+
 
 #  convert to gray
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -26,20 +39,19 @@ dilated_image = cv2.dilate(binary_image, np.ones((5, 5)))
 #  threshold the black/ non-black areas
 _, thresh = cv2.threshold(dilated_image, BINARY_THRESHOLD, 255, cv2.THRESH_BINARY)
 
-erode = cv2.erode(thresh, None, iterations=2)
-cv2.imshow("result", erode)
-cv2.waitKey(0)
+# erode = cv2.erode(thresh, None, iterations=2)
+
 #  find connected components
-components = cv2.connectedComponentsWithStats(erode, CONNECTIVITY, cv2.CV_32S)
+components = cv2.connectedComponentsWithStats(thresh, CONNECTIVITY, cv2.CV_32S)
 
 #  draw circles around center of components
 #see connectedComponentsWithStats function for attributes of components variable
 centers = components[3]
 for center in centers:
-	DrawCircle = cv2.circle(thresh, (int(center[0]), int(center[1])), DRAW_CIRCLE_RADIUS, (255), thickness=-1)
-	locate = cv2.minMaxLoc(DrawCircle)
+	# DrawCircle = cv2.circle(thresh, (int(center[0]), int(center[1])), DRAW_CIRCLE_RADIUS, (255), thickness=-1)
+	locate = cv2.minMaxLoc()
 	print(locate)
 
-cv2.imwrite("res.png", thresh)
+#cv2.imwrite("result.png", thresh)
 # cv2.imshow("result", thresh)
 # cv2.waitKey(0)

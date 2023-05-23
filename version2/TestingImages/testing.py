@@ -17,15 +17,32 @@ import PIL
 # from skimage import measure
 # Image = ('testing.jpg') # save images as newimage{column index} 
 # read = cv2.imread(Image)#this will need to loop through all images that need to be read
+CoordList = []
+Result = []
 
 image = cv2.imread("eroded.jpg")
 res = np.argwhere((image > 250).any(-1))
 
-#res = np.argwhere(image[:,:,0] > 250)
-# res = np.where(image > 200)
+for i in res:
+    CoordList.append(i)#appending all value to list
+    if len(CoordList) == 1:#if length of list is 1 then skip iteration
+        continue
+    else:
+        PenultimateValue = CoordList[-2:][0]
+        LastValue = CoordList[-1:][0]#getting last value in list
+        CoordDiff = PenultimateValue - LastValue#only should append to list if the difference of last
+        if CoordDiff < 30:
+            continue
+        else:
+            Result.append(CoordDiff)
+        print(LastValue)
+        
 
-print(str(res))
-print(len(res))
+# res = np.argwhere(image[:,:,0] > 250) not sure about this one
+
+print(str(Result))
+
+# print(str(res))
 
 
-# np.argwhere(Image[255,255,255] > threshold)
+

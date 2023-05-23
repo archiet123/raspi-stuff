@@ -28,7 +28,7 @@ for i in res:
     if len(CoordList) == 1:#if length of list is 1 then skip iteration
         continue
     else:
-        PenultimateValue = CoordList[-2:][0]
+        PenultimateValue = CoordList[-2:][0]        
         LastValue = CoordList[-1:][0]#getting last value in list
         CoordDiff = PenultimateValue - LastValue#only should append to list if the difference of last
         if CoordDiff < 30:

@@ -7,25 +7,11 @@ import imutils
 import cv2
 import PIL
 
-image = cv2.imread("TestingImages/testing.jpg")
-
-
-
+image = cv2.imread("TestingImages/testing0.jpg")	
 # construct the argument parse and parse the arguments
 BINARY_THRESHOLD = 20
 CONNECTIVITY = 4
 DRAW_CIRCLE_RADIUS = 4
-
-# gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #the first parameter is the image that is read by cv2	
-
-# blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
-
-
-# thresh = cv2.threshold(blurred, 200, 250, cv2.THRESH_BINARY)[1]	
-
-
-# erode = cv2.erode(thresh, None, iterations=2) # perform a series of erosions and dilations to remove any small blobs of noise from the thresholded image
-
 
 #  convert to gray
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -46,12 +32,16 @@ components = cv2.connectedComponentsWithStats(thresh, CONNECTIVITY, cv2.CV_32S)
 
 #  draw circles around center of components
 #see connectedComponentsWithStats function for attributes of components variable
+CenterList = []
 centers = components[3]
 for center in centers:
-	# DrawCircle = cv2.circle(thresh, (int(center[0]), int(center[1])), DRAW_CIRCLE_RADIUS, (255), thickness=-1)
-	locate = cv2.minMaxLoc()
-	print(locate)
+	#print(center)
+	# res = cv2.circle(thresh, (int(center[0]), int(center[1])), DRAW_CIRCLE_RADIUS, (255), thickness=-1)
+	# res = np.argwhere((thresh > 250).any(-1))
+	CenterList.append(center)
 
-#cv2.imwrite("result.png", thresh)
-# cv2.imshow("result", thresh)
+CenterList.pop(0)
+print(CenterList)
+cv2.imwrite("result.png", thresh)
+# # cv2.imshow("result", thresh)
 # cv2.waitKey(0)

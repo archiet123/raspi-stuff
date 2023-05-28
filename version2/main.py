@@ -7,14 +7,15 @@ import os
 import argparse
 import PIL
 
-from backend import * #importing variables from other file
-os.system('python backend.py')
+# from backend import * #importing variables from other file
+# os.system('python backend.py')
 
 Connectivity = 4
 
-for index in range(81):      
+for index in range(1):      
 
-	image = cv2.imread("TestingImages/testing.jpg")	
+	#image = cv2.imread(f"assets/testing{index}.jpg")	
+	image = cv2.imread(f"TestingImages/testing.jpg")
 
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #the first parameter is the image that is read by cv2	
 	blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
@@ -23,31 +24,30 @@ for index in range(81):
 
 	components = cv2.connectedComponentsWithStats(erode, Connectivity, cv2.CV_32S)
 
+
 	CenterList = []
 	centers = components[3]
-	for center in centers:#center is the coordinate for each component (where a pixel is greater than 255)
-		print(center)
-		print(type(center))
+	for center in centers:#center is the coordinate for each component (where a pixel is greater than 255)		
+		print(f"index: {index} Coord: {center}")
 		rounded = center.round()#rounding each coordinate	
 		CenterList.append(rounded)#appending center coordinates to list
 
 	CenterList.pop(0)#removing first value (first value will always be the center of the image)
-	print(CenterList)
+	print(CenterList)	
 	listToStr = ' '.join([str(elem) for elem in CenterList])#converts CenterList from nparray to list
-	print(listToStr) 
-	ClearedString = listToStr.replace(".", "").replace("]", "").replace("[", "").replace(" ", "")#clears all unwanted characters
+	print(listToStr)
+	ClearedString = listToStr.replace(".", "").replace("]", "").replace("[", "").replace(" ", "")#clears all unwanted characters	
 	print(ClearedString)
-	NewString = ''.join(" " if i % 3 == 0 else char for i, char in enumerate(ClearedString))#removes every third number in string so only the "Y" axis remains
+	NewString = ''.join(" " if i % 3 == 0 else char for i, char in enumerate(ClearedString))#removes every third number in string so only the "Y" axis remains	
 	print(NewString)
 	cv2.imwrite("result.png", thresh)
 
 	def Convert(string):
-		Li = list(string.split(" "))
-		return Li
+		List = list(string.split(" "))
+		return List	
 	
-	# Driver code
-	str1 = (NewString)
-	FinalString = (Convert(str1))
+	String = (NewString)
+	FinalString = (Convert(String))
 
 	FinalString.pop(0)
-	print(FinalString)
+	print(f"index: {index} Coord: {FinalString}")

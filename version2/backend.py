@@ -10,7 +10,7 @@ import argparse
 
 #importing variables from other file
 print(f"\nimage to select from:")
-print("abc123, abcCard, all80, card, first_image, realTest, spacedPunches\n")
+print("ABC123, All80, AlphabetTest, RandomCharacters, SpacedPunches, ZeroToNine, ZeroToZ\n")
 #creating a parser
 parser = argparse.ArgumentParser()
 #adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.

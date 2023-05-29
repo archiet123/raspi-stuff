@@ -10,22 +10,23 @@ import PIL
 from backend import * #importing variables from other file
 os.system('python backend.py')
 
-def getList(final2):	
-	if final2 > 20:
-		#print("top row")
-		return BList
-	elif final2 > 1:
-		#print("top row")
-		
-		return AList
-	elif final2 == 0:
+def getList(ListChoice):	
+	if ListChoice == 0:		
 		return List
-	
+	elif ListChoice == 1:		
+		return AList
+	elif ListChoice == 2:
+		return BList
+	elif ListChoice == 3:
+		return CList	
 	else:
 		return List
 
 Connectivity = 4
-
+AList = ['&','A','B','C','D','E','F','G','H','I']
+BList = ['-','J','K','L','M','N','O','P','Q','R']
+CList = ['/','S','T','U','V','W','X','Y','Z']
+List = ['0','1','2','3','4','5','6','7','8','9',' ']
 FinalString = ""
 
 
@@ -52,21 +53,18 @@ for index in range(81):
 	
 	RoundedYCoords = [round(num) for num in YCoords]
 	if RoundedYCoords == []:
-		RoundedYCoords.append(500)
+		RoundedYCoords.append(501)
 		print(RoundedYCoords)
 	
 	def GetSelector(*params):
-		AList = ['&','A','B','C','D','E','F','G','H','I']
-		BList = ['-','J','K','L','M','N','O','P','Q','R']
-		CList = ['/','S','T','U','V','W','X','Y','Z']
-		List = ['0','1','2','3','4','5','6','7','8','9',' ']
-		List = List
+		global ListChoice		
+		ListChoice = 0
 		for num in params:			
 			selector = 0
 			if num > 500:
 				selector = 10
 				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
-			if num > 400:
+			elif num > 400:
 				selector = 9				
 				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 375:
@@ -94,11 +92,10 @@ for index in range(81):
 				selector = 1
 				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 65:
-				List = BList
-				selector = 0
+				ListChoice = 2
 				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 25:
-				List = AList
+				ListChoice = 1
 				selector = 0
 				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num == "":
@@ -110,7 +107,8 @@ for index in range(81):
 	
 	#function call
 	selector = GetSelector(*RoundedYCoords)
-	FinalString+=List[selector]#appends character selection to final string
+	listSelector = getList(ListChoice)#selects the list that the selector will select from
+	FinalString+=listSelector[selector]#appends character selection to final string
 	# print(f"index: {index} selector: {selector}")
 	
 splited_str = []

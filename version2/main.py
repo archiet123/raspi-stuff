@@ -11,6 +11,12 @@ from backend import * #importing variables from other file
 os.system('python backend.py')
 
 Connectivity = 4
+AList = ['&','A','B','C','D','E','F','G','H','I']
+BList = ['-','J','K','L','M','N','O','P','Q','R']
+CList = ['/','S','T','U','V','W','X','Y','Z']
+List = ['0','1','2','3','4','5','6','7','8','9']
+FinalString = ""
+
 
 for index in range(81):      
 
@@ -44,44 +50,50 @@ for index in range(81):
 				
 		for num in params:			
 			selector = 0
-			if num > 310:
-				selector = 9
-				print(selector)				
-			elif num > 275:
+			if num > 400:
+				selector = 9				
+				print(f"coord: {num} selector: {selector}")				
+			elif num > 375:
 				selector = 8
-				print(selector)				
-			elif num > 240:
+				print(f"coord: {num} selector: {selector}")				
+			elif num > 335:
 				selector = 7
-				print(selector)				
-			elif num > 200:
+				print(f"coord: {num} selector: {selector}")			
+			elif num > 300:
 				selector = 6
-				print(selector)				
-			elif num > 170:
+				print(f"coord: {num} selector: {selector}")				
+			elif num > 265:
 				selector = 5
-				print(selector)				
-			elif num > 130:
+				print(f"coord: {num} selector: {selector}")				
+			elif num > 235:
 				selector = 4
-				print(selector)				
-			elif num > 100:
+				print(f"coord: {num} selector: {selector}")			
+			elif num > 195:
 				selector = 3
-				print(selector)
-			elif num > 60:
+				print(f"coord: {num} selector: {selector}")
+			elif num > 165:
 				selector = 2
-				print(selector)
-			elif num > 35:
+				print(f"coord: {num} selector: {selector}")
+			elif num > 130:
 				selector = 1
-				print(selector)
+				print(f"coord: {num} selector: {selector}")
 			elif num > 20:
 				selector = 0
-				print(selector)
+				print(f"coord: {num} selector: {selector}")
 		return selector
 			
-		
 			
-	#input list
-	my_list = [32, 137]
+	
 	#function call
 	selector = GetSelector(*RoundedYCoords)
-	print(f"index: {index} selector: {selector}")
+	FinalString+=List[selector]#appends character selection to final string
+	# print(f"index: {index} selector: {selector}")
 	
-	
+splited_str = []
+n  = 9
+# looping through  example_str from 0 to length
+# of example_str in a step size of 5
+for index in range(0, len(FinalString), n):
+	# slicing at iteration stops and storing it in splited_str
+	splited_str.append(FinalString[index : index + n]) 
+print(splited_str)

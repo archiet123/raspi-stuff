@@ -26,9 +26,10 @@ img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
 #cv2.imshow('window', img)
 #cv2.waitKey()
 
-aList = ['A','B','C','D','E','F','G','H','I']
-bList = ['J','K','L','M','N','O','P','Q','R']
-List = []
+AList = ['&','A','B','C','D','E','F','G','H','I']
+BList = ['-','J','K','L','M','N','O','P','Q','R']
+CList = ['/','S','T','U','V','W','X','Y','Z']
+List = ['0','1','2','3','4','5','6','7','8','9']
 
 
 def AutoCoords():

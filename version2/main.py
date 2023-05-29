@@ -10,11 +10,22 @@ import PIL
 from backend import * #importing variables from other file
 os.system('python backend.py')
 
+def getList(final2):	
+	if final2 > 20:
+		#print("top row")
+		return BList
+	elif final2 > 1:
+		#print("top row")
+		
+		return AList
+	elif final2 == 0:
+		return List
+	
+	else:
+		return List
+
 Connectivity = 4
-AList = ['&','A','B','C','D','E','F','G','H','I']
-BList = ['-','J','K','L','M','N','O','P','Q','R']
-CList = ['/','S','T','U','V','W','X','Y','Z']
-List = ['0','1','2','3','4','5','6','7','8','9']
+
 FinalString = ""
 
 
@@ -40,48 +51,61 @@ for index in range(81):
 	# print(type(YCoords))
 	
 	RoundedYCoords = [round(num) for num in YCoords]
-	#print(F"index: {index} Coord: {RoundYCoords}")
-
-	# for i in RoundYCoords:
-	# 	selector = getCharacter(RoundYCoords)
-	# 	print(selector)
-
+	if RoundedYCoords == []:
+		RoundedYCoords.append(500)
+		print(RoundedYCoords)
+	
 	def GetSelector(*params):
-				
+		AList = ['&','A','B','C','D','E','F','G','H','I']
+		BList = ['-','J','K','L','M','N','O','P','Q','R']
+		CList = ['/','S','T','U','V','W','X','Y','Z']
+		List = ['0','1','2','3','4','5','6','7','8','9',' ']
+		List = List
 		for num in params:			
 			selector = 0
+			if num > 500:
+				selector = 10
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			if num > 400:
 				selector = 9				
-				print(f"coord: {num} selector: {selector}")				
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 375:
 				selector = 8
-				print(f"coord: {num} selector: {selector}")				
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 335:
 				selector = 7
-				print(f"coord: {num} selector: {selector}")			
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 			elif num > 300:
 				selector = 6
-				print(f"coord: {num} selector: {selector}")				
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 265:
 				selector = 5
-				print(f"coord: {num} selector: {selector}")				
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 235:
 				selector = 4
-				print(f"coord: {num} selector: {selector}")			
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 			elif num > 195:
 				selector = 3
-				print(f"coord: {num} selector: {selector}")
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 165:
 				selector = 2
-				print(f"coord: {num} selector: {selector}")
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 130:
 				selector = 1
-				print(f"coord: {num} selector: {selector}")
-			elif num > 20:
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+			elif num > 65:
+				List = BList
 				selector = 0
-				print(f"coord: {num} selector: {selector}")
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+			elif num > 25:
+				List = AList
+				selector = 0
+				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+			elif num == "":
+				selector = 10
 		return selector
-			
+	
+
 			
 	
 	#function call

@@ -31,7 +31,7 @@ bList = ['J','K','L','M','N','O','P','Q','R']
 List = []
 
 
-def autoCoords():
+def AutoCoords():
 	leftY = 468
 	rightY = 480
 	
@@ -99,99 +99,29 @@ def autoCoords():
 			leftY +=-4
 			rightY +=-4
 
-def topRow():
-	leftY = 468
-	rightY = 480
-	
-	for index in range(0,80):
-		
-		column0 = img[210:290, leftY:rightY]
-		plt.imsave(f"top_row_images/testing{index}.jpg", column0)
-		
-		leftY +=13
-		rightY +=13
+AutoCoords()
 
-		if index == 8:
-			leftY +=-4
-			rightY +=-4
-
-		if index == 14:
-			leftY +=-4
-			rightY +=-4
-
-		if index == 17:
-			leftY +=-4
-			rightY +=-4
-		
-		if index == 23:
-			leftY +=-6
-			rightY +=-6		
-
-		if index == 29:
-			leftY +=-4
-			rightY +=-4	
-
-		if index == 31:
-			leftY +=-6
-			rightY +=-6
-
-		if index == 39:
-			leftY +=-6
-			rightY +=-6
-		
-		if index == 43:
-			leftY +=-6
-			rightY +=-6
-
-		if index == 49:
-			leftY +=-6
-			rightY +=-6
-
-		if index == 56:
-			leftY +=-6
-			rightY +=-6
-
-		if index == 60:
-			leftY +=-6
-			rightY +=-6
-
-		if index == 67:
-			leftY +=-6
-			rightY +=-6
-
-		if index == 75:
-			leftY +=-6
-			rightY +=-6
-		
-		if index == 79:
-			leftY +=-4
-			rightY +=-4	
-
-
-autoCoords()
-topRow()
-
-def getCharacter(final):	
+def getCharacter(RoundYCoords):	
 	selector = 0
-	if final > 310:
+	if RoundYCoords > 310:
 		selector = 9
-	elif final > 275:
+	elif RoundYCoords > 275:
 		selector = 8
-	elif final > 240:
+	elif RoundYCoords > 240:
 		selector = 7
-	elif final > 200:
+	elif RoundYCoords > 200:
 		selector = 6
-	elif final > 170:
+	elif RoundYCoords > 170:
 		selector = 5
-	elif final > 130:
+	elif RoundYCoords > 130:
 		selector = 4
-	elif final > 100:
+	elif RoundYCoords > 100:
 		selector = 3
-	elif final > 60:
+	elif RoundYCoords > 60:
 		selector = 2
-	elif final > 35:
+	elif RoundYCoords > 35:
 		selector = 1
-	elif final > 20:
+	elif RoundYCoords > 20:
 		selector = 0
 	return selector
 

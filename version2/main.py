@@ -7,15 +7,15 @@ import os
 import argparse
 import PIL
 
-# from backend import * #importing variables from other file
-# os.system('python backend.py')
+from backend import * #importing variables from other file
+os.system('python backend.py')
 
 Connectivity = 4
 
-for index in range(1):      
+for index in range(81):      
 
-	#image = cv2.imread(f"assets/testing{index}.jpg")	
-	image = cv2.imread(f"TestingImages/testing.jpg")
+	image = cv2.imread(f"assets/testing{index}.jpg")	
+	#image = cv2.imread(f"TestingImages/testing.jpg")
 
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #the first parameter is the image that is read by cv2	
 	blurred = cv2.GaussianBlur(gray, (11, 11), 0)	
@@ -31,31 +31,57 @@ for index in range(1):
 		YValue = (center[1])
 		YCoords.append(YValue)
 	YCoords.pop(0)#removing first value (first value will always be the center of the image)
-	print(type(YCoords))
+	# print(type(YCoords))
 	
-	RoundToWhole = [round(num) for num in YCoords]
-	print(RoundToWhole)
+	RoundedYCoords = [round(num) for num in YCoords]
+	#print(F"index: {index} Coord: {RoundYCoords}")
 
+	# for i in RoundYCoords:
+	# 	selector = getCharacter(RoundYCoords)
+	# 	print(selector)
 
-
-		# rounded = center.round()#rounding each coordinate	
-		# CenterList.append(rounded)#appending center coordinates to list
-	# CenterList.pop(0)#removing first value (first value will always be the center of the image)
-	# print(CenterList)	
-	# listToStr = ' '.join([str(elem) for elem in CenterList])#converts CenterList from nparray to list
-	# print(listToStr)
-	# ClearedString = listToStr.replace(".", "").replace("]", "").replace("[", "").replace(" ", "")#clears all unwanted characters	
-	# print(ClearedString)
-	# NewString = ''.join(" " if i % 3 == 0 else char for i, char in enumerate(ClearedString))#removes every third number in string so only the "Y" axis remains	
-	# print(NewString)
-	# cv2.imwrite("result.png", thresh)
-
-	# def Convert(string):
-	# 	List = list(string.split(" "))
-	# 	return List	
+	def GetSelector(*params):
+				
+		for num in params:			
+			selector = 0
+			if num > 310:
+				selector = 9
+				print(selector)				
+			elif num > 275:
+				selector = 8
+				print(selector)				
+			elif num > 240:
+				selector = 7
+				print(selector)				
+			elif num > 200:
+				selector = 6
+				print(selector)				
+			elif num > 170:
+				selector = 5
+				print(selector)				
+			elif num > 130:
+				selector = 4
+				print(selector)				
+			elif num > 100:
+				selector = 3
+				print(selector)
+			elif num > 60:
+				selector = 2
+				print(selector)
+			elif num > 35:
+				selector = 1
+				print(selector)
+			elif num > 20:
+				selector = 0
+				print(selector)
+		return selector
+			
+		
+			
+	#input list
+	my_list = [32, 137]
+	#function call
+	selector = GetSelector(*RoundedYCoords)
+	print(f"index: {index} selector: {selector}")
 	
-	# String = (NewString)
-	# FinalString = (Convert(String))
-
-	# FinalString.pop(0)
-	# print(f"index: {index} Coord: {FinalString}")
+	

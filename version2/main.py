@@ -24,30 +24,38 @@ for index in range(1):
 
 	components = cv2.connectedComponentsWithStats(erode, Connectivity, cv2.CV_32S)
 
-
+	YCoords = []
 	CenterList = []
 	centers = components[3]
 	for center in centers:#center is the coordinate for each component (where a pixel is greater than 255)		
-		print(f"index: {index} Coord: {center}")
-		rounded = center.round()#rounding each coordinate	
-		CenterList.append(rounded)#appending center coordinates to list
-
-	CenterList.pop(0)#removing first value (first value will always be the center of the image)
-	print(CenterList)	
-	listToStr = ' '.join([str(elem) for elem in CenterList])#converts CenterList from nparray to list
-	print(listToStr)
-	ClearedString = listToStr.replace(".", "").replace("]", "").replace("[", "").replace(" ", "")#clears all unwanted characters	
-	print(ClearedString)
-	NewString = ''.join(" " if i % 3 == 0 else char for i, char in enumerate(ClearedString))#removes every third number in string so only the "Y" axis remains	
-	print(NewString)
-	cv2.imwrite("result.png", thresh)
-
-	def Convert(string):
-		List = list(string.split(" "))
-		return List	
+		YValue = (center[1])
+		YCoords.append(YValue)
+	YCoords.pop(0)#removing first value (first value will always be the center of the image)
+	print(type(YCoords))
 	
-	String = (NewString)
-	FinalString = (Convert(String))
+	RoundToWhole = [round(num) for num in YCoords]
+	print(RoundToWhole)
 
-	FinalString.pop(0)
-	print(f"index: {index} Coord: {FinalString}")
+
+
+		# rounded = center.round()#rounding each coordinate	
+		# CenterList.append(rounded)#appending center coordinates to list
+	# CenterList.pop(0)#removing first value (first value will always be the center of the image)
+	# print(CenterList)	
+	# listToStr = ' '.join([str(elem) for elem in CenterList])#converts CenterList from nparray to list
+	# print(listToStr)
+	# ClearedString = listToStr.replace(".", "").replace("]", "").replace("[", "").replace(" ", "")#clears all unwanted characters	
+	# print(ClearedString)
+	# NewString = ''.join(" " if i % 3 == 0 else char for i, char in enumerate(ClearedString))#removes every third number in string so only the "Y" axis remains	
+	# print(NewString)
+	# cv2.imwrite("result.png", thresh)
+
+	# def Convert(string):
+	# 	List = list(string.split(" "))
+	# 	return List	
+	
+	# String = (NewString)
+	# FinalString = (Convert(String))
+
+	# FinalString.pop(0)
+	# print(f"index: {index} Coord: {FinalString}")

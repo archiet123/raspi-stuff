@@ -54,7 +54,7 @@ for index in range(81):
 	RoundedYCoords = [round(num) for num in YCoords]
 	if RoundedYCoords == []:
 		RoundedYCoords.append(501)
-		print(RoundedYCoords)
+		#print(RoundedYCoords)
 	
 	def GetSelector(*params):
 		global ListChoice		
@@ -63,41 +63,41 @@ for index in range(81):
 			selector = 0
 			if num > 500:
 				selector = 10
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 400:
 				selector = 9				
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 375:
 				selector = 8
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 335:
 				selector = 7
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 			elif num > 300:
 				selector = 6
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 265:
 				selector = 5
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 235:
 				selector = 4
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 			elif num > 195:
 				selector = 3
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 165:
 				selector = 2
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 130:
 				selector = 1
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 65:
 				ListChoice = 2
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 25:
 				ListChoice = 1
 				selector = 0
-				print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num == "":
 				selector = 10
 		return selector

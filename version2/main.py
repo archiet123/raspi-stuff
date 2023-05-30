@@ -7,8 +7,93 @@ import os
 import argparse
 import PIL
 
-from backend import * #importing variables from other file
-os.system('python backend.py')
+#importing variables from other file
+print(f"\nimage to select from:")
+print("ABC123, All80, AlphabetTest, RandomCharacters, SpacedPunches, ZeroToNine, ZeroToZ\n")
+#creating a parser
+parser = argparse.ArgumentParser()
+#adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.
+parser.add_argument('--ImageName', type=str, required=True)
+
+#assigning argument to variable
+value = parser.parse_args()
+
+#assigning imageName to varible, can be accessed faster
+getImage = value.ImageName
+
+img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
+
+
+
+def AutoCoords():
+	leftY = 468
+	rightY = 480
+	
+	for index in range(0,81):
+		
+		column0 = img[200:650, leftY:rightY]
+		plt.imsave(f"assets/testing{index}.jpg", column0)
+		
+		leftY +=13
+		rightY +=13	
+		
+		if index == 8:
+			leftY +=-4
+			rightY +=-4
+
+		if index == 14:
+			leftY +=-4
+			rightY +=-4
+
+		if index == 17:
+			leftY +=-4
+			rightY +=-4
+		
+		if index == 23:
+			leftY +=-6
+			rightY +=-6		
+
+		if index == 29:
+			leftY +=-4
+			rightY +=-4	
+
+		if index == 31:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 39:
+			leftY +=-6
+			rightY +=-6
+		
+		if index == 43:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 49:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 56:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 60:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 67:
+			leftY +=-6
+			rightY +=-6
+
+		if index == 75:
+			leftY +=-6
+			rightY +=-6
+		
+		if index == 79:
+			leftY +=-4
+			rightY +=-4
+
+AutoCoords()
 
 def getList(ListChoice):	
 	if ListChoice == 0:		
@@ -19,6 +104,16 @@ def getList(ListChoice):
 		return BList
 	elif ListChoice == 3:
 		return CList	
+	else:
+		return List
+
+def GetList(SelectA, SelectB, SelectC, ActiveA, ActiveB, ActiveC):
+	if SelectA == True and ActiveA == True:
+		return AList
+	elif SelectB == True and ActiveB == True:
+		return BList
+	elif SelectC == True and ActiveC == True:
+		return CList
 	else:
 		return List
 
@@ -56,60 +151,105 @@ for index in range(81):
 		RoundedYCoords.append(501)
 		#print(RoundedYCoords)
 	
-	def GetSelector(*params):
+	def GetSelector(*params):		
 		global ListChoice		
-		ListChoice = 0
+		global SelectA 
+		global SelectB 
+		global SelectC 
+		global ActiveA
+		global ActiveB
+		global ActiveC
+		SelectA = False
+		SelectB = False
+		SelectC = False
+		ActiveA = False
+		ActiveB = False
+		ActiveC = False
 		for num in params:			
 			selector = 0
 			if num > 500:
 				selector = 10
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 400:
-				selector = 9				
+				selector = 9
+				SelectA = True
+				SelectB = True
+				SelectC = True				
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 375:
 				selector = 8
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 335:
 				selector = 7
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 			elif num > 300:
 				selector = 6
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 265:
 				selector = 5
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")				
 			elif num > 235:
 				selector = 4
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 			elif num > 195:
 				selector = 3
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 165:
 				selector = 2
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
 			elif num > 130:
 				selector = 1
+				SelectA = True
+				SelectB = True
+				SelectC = True
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
-			elif num > 65:
-				ListChoice = 2
-				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
-			elif num > 25:
-				ListChoice = 1
+			elif num > 100:
+				
+				ActiveC = True
 				selector = 0
 				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
-			elif num == "":
-				selector = 10
+			elif num > 65:
+				
+				ActiveB = True
+				selector = 0
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")
+			elif num > 25:
+								
+				ActiveA = True
+				selector = 0
+				#print(f" index: {index} coord: {num} numbers: {RoundedYCoords} selector: {selector}")			
 		return selector
-	
+		
 
 			
 	
 	#function call
 	selector = GetSelector(*RoundedYCoords)
-	listSelector = getList(ListChoice)#selects the list that the selector will select from
+	listSelector = GetList(SelectA, SelectB, SelectC, ActiveA, ActiveB, ActiveC)#selects the list that the selector will select from
 	FinalString+=listSelector[selector]#appends character selection to final string
-	# print(f"index: {index} selector: {selector}")
+	#print(FinalString)
+	#print(f"index: {index} selector: {selector}")
 	
 splited_str = []
 n  = 9

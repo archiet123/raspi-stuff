@@ -6,23 +6,25 @@ import cv2
 import os
 import argparse
 import PIL
+import time
+start_time = time.time()
 
-#importing variables from other file
-print(f"\nimage to select from:")
-print("ABC123, All80, AlphabetTest, RandomCharacters, SpacedPunches, ZeroToNine, ZeroToZ\n")
-#creating a parser
-parser = argparse.ArgumentParser()
-#adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.
-parser.add_argument('--ImageName', type=str, required=True)
+#selecting different image files
+#print(f"\nimage to select from:")
+# print("ABC123, All80, AlphabetTest, RandomCharacters, SpacedPunches, ZeroToNine, ZeroToZ\n")
+# #creating a parser
+# parser = argparse.ArgumentParser()
+# #adding the argument, "--name" is how this value is refered to if there are multiple arguments parsed.
+# parser.add_argument('--ImageName', type=str, required=True)
 
-#assigning argument to variable
-value = parser.parse_args()
+# #assigning argument to variable
+# value = parser.parse_args()
 
-#assigning imageName to varible, can be accessed faster
-getImage = value.ImageName
+# #assigning imageName to varible, can be accessed faster
+# getImage = value.ImageName
 
-img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
-
+#img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
+img = cv2.imread(f'ImagesToRead/All80.jpg')#reading init pic
 
 
 def AutoCoords():
@@ -251,11 +253,15 @@ for index in range(81):
 	#print(FinalString)
 	#print(f"index: {index} selector: {selector}")
 	
-splited_str = []
-n  = 9
-# looping through  example_str from 0 to length
-# of example_str in a step size of 5
-for index in range(0, len(FinalString), n):
-	# slicing at iteration stops and storing it in splited_str
-	splited_str.append(FinalString[index : index + n]) 
-print(splited_str)
+#function for breaking the string down
+# splited_str = []
+# n  = 9
+# # looping through  example_str from 0 to length
+# # of example_str in a step size of 5
+# for index in range(0, len(FinalString), n):
+# 	# slicing at iteration stops and storing it in splited_str
+# 	splited_str.append(FinalString[index : index + n]) 
+# print(splited_str)
+
+print(FinalString)
+print("--- %s seconds ---" % round((time.time() - start_time),2))

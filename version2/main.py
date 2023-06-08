@@ -24,7 +24,7 @@ start_time = time.time()
 # getImage = value.ImageName
 
 #img = cv2.imread(f'ImagesToRead/{getImage}.jpg')#reading init pic
-img = cv2.imread(f'ImagesToRead/All80.jpg')#reading init pic
+img = cv2.imread(f'ImagesToRead/AlphabetTest.jpg')#reading init pic
 
 
 def AutoCoords():
@@ -264,4 +264,11 @@ for index in range(81):
 # print(splited_str)
 
 print(FinalString)
+
+#writing final string to text
+open('FinalString.txt', 'w').close()
+f = open("FinalString.txt", "w")
+f.write(str(FinalString))
+f.close()
+
 print("--- %s seconds ---" % round((time.time() - start_time),2))
